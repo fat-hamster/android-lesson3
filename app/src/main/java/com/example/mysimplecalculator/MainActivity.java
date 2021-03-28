@@ -114,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
             displayResult(calc.getOperand1());
             return;
         }
-        display.setText("0");
+        display.setText(R.string.zero);
     }
 
     private void acOperation() {
