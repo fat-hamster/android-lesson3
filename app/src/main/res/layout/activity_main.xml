@@ -14,16 +14,22 @@
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/textView"
-            android:layout_height="match_parent"
             android:layout_width="match_parent"
-            android:layout_marginRight="@dimen/horizontal_margin"
+            android:layout_height="match_parent"
             android:layout_marginLeft="@dimen/horizontal_margin"
             android:layout_marginTop="@dimen/top_margin"
+            android:layout_marginRight="@dimen/horizontal_margin"
+            android:background="@drawable/style_textview"
             android:gravity="right"
             android:hint="@string/_0"
-            android:textSize="@dimen/textviewSize"
             android:paddingRight="@dimen/horizontal_margin"
-            android:background="@drawable/style_textview" />
+            android:textSize="@dimen/textviewSize" />
+        <Switch
+            android:id="@+id/theme_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:text="@string/light_dark_theme_switch" />
 
 
     </LinearLayout>
@@ -44,23 +50,23 @@
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/ac"
-                android:text="@string/ac"
-                style="@style/DarkGrayButtons" />
+                style="@style/DarkGrayButtons"
+                android:text="@string/ac" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/min_plus"
-                android:text="@string/min_plus"
-                style="@style/DarkGrayButtons" />
+                style="@style/DarkGrayButtons"
+                android:text="@string/min_plus" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/percent"
-                android:text="@string/percent"
-                style="@style/DarkGrayButtons" />
+                style="@style/DarkGrayButtons"
+                android:text="@string/percent" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/div"
-                android:text="@string/divide"
-                style="@style/OrangeButtons" />
+                style="@style/OrangeButtons"
+                android:text="@string/divide" />
         </LinearLayout>
 
         <LinearLayout
@@ -74,23 +80,23 @@
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/_7"
-                android:text="@string/_7"
-                style="@style/GrayButtons" />
+                style="@style/GrayButtons"
+                android:text="@string/_7" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/_8"
-                android:text="@string/_8"
-                style="@style/GrayButtons" />
+                style="@style/GrayButtons"
+                android:text="@string/_8" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/_9"
-                android:text="@string/_9"
-                style="@style/GrayButtons" />
+                style="@style/GrayButtons"
+                android:text="@string/_9" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/multiply"
-                android:text="@string/multiply"
-                style="@style/OrangeButtons" />
+                style="@style/OrangeButtons"
+                android:text="@string/multiply" />
         </LinearLayout>
 
         <LinearLayout
@@ -105,23 +111,23 @@
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/_4"
-                android:text="@string/_4"
-                style="@style/GrayButtons" />
+                style="@style/GrayButtons"
+                android:text="@string/_4" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/_5"
-                android:text="@string/_5"
-                style="@style/GrayButtons" />
+                style="@style/GrayButtons"
+                android:text="@string/_5" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/_6"
-                android:text="@string/_6"
-                style="@style/GrayButtons" />
+                style="@style/GrayButtons"
+                android:text="@string/_6" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/minus"
-                android:text="@string/minus"
-                style="@style/OrangeButtons" />
+                style="@style/OrangeButtons"
+                android:text="@string/minus" />
         </LinearLayout>
 
         <LinearLayout
@@ -136,23 +142,23 @@
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/_1"
-                android:text="@string/_1"
-                style="@style/GrayButtons" />
+                style="@style/GrayButtons"
+                android:text="@string/_1" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/_2"
-                android:text="@string/_2"
-                style="@style/GrayButtons" />
+                style="@style/GrayButtons"
+                android:text="@string/_2" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/_3"
-                android:text="@string/_3"
-                style="@style/GrayButtons" />
+                style="@style/GrayButtons"
+                android:text="@string/_3" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/plus"
-                android:text="@string/plus"
-                style="@style/OrangeButtons" />
+                style="@style/OrangeButtons"
+                android:text="@string/plus" />
         </LinearLayout>
 
         <LinearLayout
@@ -171,10 +177,10 @@
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/_0"
-                    android:text="@string/_0"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/button_height"
                     android:backgroundTint="@color/gray"
+                    android:text="@string/_0"
                     android:textSize="@dimen/button_text_size" />
             </LinearLayout>
 
@@ -186,15 +192,21 @@
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/comma"
-                    android:text="@string/comma"
-                    style="@style/GrayButtons" />
+                    style="@style/GrayButtons"
+                    android:text="@string/comma" />
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/equal"
-                    android:text="@string/equal"
-                    style="@style/OrangeButtons" />
+                    style="@style/OrangeButtons"
+                    android:text="@string/equal" />
             </LinearLayout>
         </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
 
     </LinearLayout>
 

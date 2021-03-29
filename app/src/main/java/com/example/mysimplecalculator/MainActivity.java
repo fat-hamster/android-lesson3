@@ -2,11 +2,19 @@ package com.example.mysimplecalculator;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
+import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.android.material.button.MaterialButton;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -48,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
         Button plus = findViewById(R.id.plus);
         Button comma = findViewById(R.id.comma);
         Button equal = findViewById(R.id.equal);
+        Switch theme_switch = (Switch) findViewById(R.id.theme_switch);
 
         Map<Integer, Button> mNumberButtons = new HashMap<>();
         mNumberButtons.put(1, (Button) findViewById(R.id._1));
@@ -87,7 +96,33 @@ public class MainActivity extends AppCompatActivity {
         divide.setOnClickListener(v -> divide());
         equal.setOnClickListener(v -> calculate());
         percent.setOnClickListener(v -> percent());
+
+        theme_switch.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            if (isChecked) {
+                Toast.makeText(MainActivity.this,
+                        "Switch On", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(MainActivity.this,
+                        "Switch Off", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        /*theme_switch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    //setTheme(R.style.Theme_MySimpleCalculatorDark);
+                    display.setText("Checked");
+                } else {
+                    //setTheme(R.style.Theme_MySimpleCalculator);
+                    display.setText("Unchecked");
+                }
+                //recreate();
+            }
+        });*/
     }
+
+
 
     @Override
     protected void onSaveInstanceState(@NonNull Bundle instanceState) {
@@ -108,10 +143,12 @@ public class MainActivity extends AppCompatActivity {
     private void restoreDisplay() {
         if (calc.getOperand2() != null) {
             displayResult(calc.getResult());
+            res = true;
             return;
         }
         if (calc.getOperand1() != null && calc.getOperation() == 0) {
             displayResult(calc.getOperand1());
+            res = true;
             return;
         }
         display.setText(R.string.zero);
