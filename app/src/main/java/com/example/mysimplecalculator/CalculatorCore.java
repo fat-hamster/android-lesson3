@@ -4,17 +4,28 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.util.Log;
 
+import static com.example.mysimplecalculator.CalculatorCore.OPERATIONS.*;
+
 public class CalculatorCore implements Parcelable {
     private Double operand1;
     private Double operand2;
-    private int operation;
+    private OPERATIONS operation;
     private Double result;
+
+    public enum OPERATIONS{
+        PLUS,
+        SUBTRACTION,
+        MULTIPLY,
+        DIVIDE,
+        PERCENT,
+        NONE
+    }
 
     public CalculatorCore() {
         operand1 = null;
         operand2 = null;
         result = null;
-        operation = 0;
+        operation = NONE;
     }
 
     private CalculatorCore(Parcel in) {
@@ -36,10 +47,10 @@ public class CalculatorCore implements Parcelable {
             operand2 = Double.parseDouble(data[2]);
         }
 
-        operation = Integer.parseInt(data[3]);
+        operation = OPERATIONS.valueOf(data[3]);
     }
 
-    public void setOperation(int operation) {
+    public void setOperation(OPERATIONS operation) {
         this.operation = operation;
     }
 
@@ -51,7 +62,7 @@ public class CalculatorCore implements Parcelable {
         return operand2;
     }
 
-    public int getOperation() {
+    public OPERATIONS getOperation() {
         return operation;
     }
 
@@ -59,14 +70,14 @@ public class CalculatorCore implements Parcelable {
         operand1 = null;
         operand2 = null;
         result = null;
-        operation = 0;
+        operation = NONE;
     }
 
     public void addNumber(Double num) {
         if (operand1 != null && operand2 != null) {
             return;
         }
-        if (operation == 0) {
+        if (operation == NONE) {
             operand1 = num;
         } else {
             operand2 = num;
@@ -75,15 +86,15 @@ public class CalculatorCore implements Parcelable {
 
     public Double getResult() {
         switch (operation) {
-            case 1:
+            case PLUS:
                 return sum();
-            case 2:
+            case SUBTRACTION:
                 return sub();
-            case 3:
+            case MULTIPLY:
                 return mult();
-            case 4:
+            case DIVIDE:
                 return div();
-            case 5:
+            case PERCENT:
                 return percent();
         }
         return result;
@@ -121,8 +132,12 @@ public class CalculatorCore implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
+        /*dest.writeString(String.valueOf(result));
+        dest.writeString(String.valueOf(operand1));
+        dest.writeString(String.valueOf(operand2));
+        dest.writeString(operation.toString()); */
         dest.writeStringArray(new String[]{String.valueOf(result), String.valueOf(operand1),
-                String.valueOf(operand2), String.valueOf(operation)});
+                String.valueOf(operand2), operation.toString()});
     }
 
     public static final Parcelable.Creator<CalculatorCore> CREATOR = new Parcelable.Creator<CalculatorCore>() {

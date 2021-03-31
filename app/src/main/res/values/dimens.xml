@@ -5,4 +5,5 @@
     <dimen name="textview_text_size">48sp</dimen>
     <dimen name="button_height">68dp</dimen>
     <dimen name="button_text_size">24sp</dimen>
+    <dimen name="textviewSize">48sp</dimen>
 </resources>
