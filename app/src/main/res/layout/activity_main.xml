@@ -23,14 +23,6 @@
             android:hint="@string/_0"
             android:paddingRight="@dimen/horizontal_margin"
             android:textSize="@dimen/textviewSize" />
-        <Switch
-            android:id="@+id/themeSwitch"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right"
-            android:text="@string/light_dark_theme_switch" />
-
-
     </LinearLayout>
 
     <LinearLayout

@@ -45,7 +45,6 @@ public class MainActivity extends AppCompatActivity {
         MaterialButton plus = findViewById(R.id.plus);
         MaterialButton comma = findViewById(R.id.comma);
         MaterialButton equal = findViewById(R.id.equal);
-        Switch themeSwitch = (Switch) findViewById(R.id.themeSwitch);
 
         Map<Integer, Button> mNumberButtons = new HashMap<>();
         mNumberButtons.put(1, (MaterialButton) findViewById(R.id._1));
@@ -85,28 +84,6 @@ public class MainActivity extends AppCompatActivity {
         multiply.setOnClickListener(v -> setOperation(CalculatorCore.OPERATIONS.MULTIPLY));
         divide.setOnClickListener(v -> setOperation(CalculatorCore.OPERATIONS.DIVIDE));
         percent.setOnClickListener(v -> setOperation(CalculatorCore.OPERATIONS.PERCENT));
-
-//        themeSwitch.setOnClickListener(v -> {
-//            if(themeSwitch.isChecked()) {
-//                Toast.makeText(activity, "Switch is in ON State", Toast.LENGTH_LONG).show();
-//            } else {
-//                Toast.makeText(activity, "Switch is in OFF State", Toast.LENGTH_LONG).show();
-//            }
-//        });
-
-        /*theme_switch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
-                    //setTheme(R.style.Theme_MySimpleCalculatorDark);
-                    display.setText("Checked");
-                } else {
-                    //setTheme(R.style.Theme_MySimpleCalculator);
-                    display.setText("Unchecked");
-                }
-                //recreate();
-            }
-        });*/
     }
 
 
