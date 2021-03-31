@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="MyTextViewStyle" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <shape xmlns:android="http://schemas.android.com/apk/res/android"
+            android:thickness="0dp"
+            android:shape="rectangle">
+            <stroke android:width="3dp"
+                android:color="@color/dark_gray" />
+            <corners android:radius="5dp" />
+            <gradient
+                android:startColor="@color/textview_gradient_start"
+                android:endColor="@color/textview_gradient_start"
+                android:type="linear"
+                android:angle="270" />
+        </shape>
+        <item name="android:textSize">@dimen/textviewSize</item>
+    </style>
+</resources>
