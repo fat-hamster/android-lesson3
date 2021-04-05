@@ -44,19 +44,18 @@ public class MainActivity extends AppCompatActivity {
         MaterialButton plus = findViewById(R.id.plus);
         MaterialButton comma = findViewById(R.id.comma);
         MaterialButton equal = findViewById(R.id.equal);
-        Switch themeSwitch = (Switch) findViewById(R.id.themeSwitch);
 
         Map<Integer, Button> mNumberButtons = new HashMap<>();
-        mNumberButtons.put(1, (MaterialButton) findViewById(R.id._1));
-        mNumberButtons.put(2, (MaterialButton) findViewById(R.id._2));
-        mNumberButtons.put(3, (MaterialButton) findViewById(R.id._3));
-        mNumberButtons.put(4, (MaterialButton) findViewById(R.id._4));
-        mNumberButtons.put(5, (MaterialButton) findViewById(R.id._5));
-        mNumberButtons.put(6, (MaterialButton) findViewById(R.id._6));
-        mNumberButtons.put(7, (MaterialButton) findViewById(R.id._7));
-        mNumberButtons.put(8, (MaterialButton) findViewById(R.id._8));
-        mNumberButtons.put(9, (MaterialButton) findViewById(R.id._9));
-        mNumberButtons.put(0, (MaterialButton) findViewById(R.id._0));
+        mNumberButtons.put(1, findViewById(R.id._1));
+        mNumberButtons.put(2, findViewById(R.id._2));
+        mNumberButtons.put(3, findViewById(R.id._3));
+        mNumberButtons.put(4, findViewById(R.id._4));
+        mNumberButtons.put(5, findViewById(R.id._5));
+        mNumberButtons.put(6, findViewById(R.id._6));
+        mNumberButtons.put(7, findViewById(R.id._7));
+        mNumberButtons.put(8, findViewById(R.id._8));
+        mNumberButtons.put(9, findViewById(R.id._9));
+        mNumberButtons.put(0, findViewById(R.id._0));
 
         for(Integer num: mNumberButtons.keySet()) {
             Button btn = mNumberButtons.get(num);
