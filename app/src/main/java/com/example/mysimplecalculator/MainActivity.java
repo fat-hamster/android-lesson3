@@ -4,8 +4,13 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 import android.widget.Switch;
 import android.widget.TextView;
@@ -30,6 +35,28 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         activity = this; // может пригодитья, но не факт
         initView();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        switch(id){
+            case R.id.action_settings :
+                Intent settingsIntent = new Intent(MainActivity.this, Settings.class);
+                startActivity(settingsIntent);
+                return true;
+            case R.id.action_about:
+                Intent aboutIntent = new Intent(MainActivity.this, About.class);
+                startActivity(aboutIntent);
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     private void initView() {
@@ -83,28 +110,6 @@ public class MainActivity extends AppCompatActivity {
         multiply.setOnClickListener(v -> setOperation(CalculatorCore.OPERATIONS.MULTIPLY));
         divide.setOnClickListener(v -> setOperation(CalculatorCore.OPERATIONS.DIVIDE));
         percent.setOnClickListener(v -> setOperation(CalculatorCore.OPERATIONS.PERCENT));
-
-//        themeSwitch.setOnClickListener(v -> {
-//            if(themeSwitch.isChecked()) {
-//                Toast.makeText(activity, "Switch is in ON State", Toast.LENGTH_LONG).show();
-//            } else {
-//                Toast.makeText(activity, "Switch is in OFF State", Toast.LENGTH_LONG).show();
-//            }
-//        });
-
-        /*theme_switch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
-                    //setTheme(R.style.Theme_MySimpleCalculatorDark);
-                    display.setText("Checked");
-                } else {
-                    //setTheme(R.style.Theme_MySimpleCalculator);
-                    display.setText("Unchecked");
-                }
-                //recreate();
-            }
-        });*/
     }
 
 

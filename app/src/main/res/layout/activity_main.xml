@@ -171,10 +171,7 @@
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/_0"
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/button_height"
-                    android:backgroundTint="@color/gray"
-                    android:text="@string/_0"
-                    android:textSize="@dimen/button_text_size" />
+                    style="@style/ZeroButtons"/>
             </LinearLayout>
 
             <LinearLayout

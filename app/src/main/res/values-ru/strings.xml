@@ -21,9 +21,9 @@
     <string name="comma">,</string>
     <string name="equal">=</string>
     <string name="error">error</string>
-    <string name="settings">Settings</string>
-    <string name="about">About</string>
-    <string name="switch_theme">Switch to Dark theme</string>
-    <string name="aboutText">Simple calculator by Dmitry Gridchin. Homework for Android Developer course. GeekBrains University</string>
-    <string name="backButton">Back</string>
+    <string name="settings">Настройки</string>
+    <string name="about">О программе</string>
+    <string name="switch_theme">Переключить на темнау тему</string>
+    <string name="aboutText">Простой калькулятор, автор Дмитрий Гридчин. Домашняя работа на курсе Андроид-разработки. Университет GeekBrains</string>
+    <string name="backButton">Назад</string>
 </resources>
