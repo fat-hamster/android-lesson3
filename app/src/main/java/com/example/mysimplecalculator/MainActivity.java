@@ -27,13 +27,17 @@ public class MainActivity extends AppCompatActivity {
     private CalculatorCore calc = new CalculatorCore();
     private final static String CALC_VALUES = "CalcValues";
     static final String TAG = "MySimpleCalculator";
-    private Activity activity;
+    protected static Boolean dark = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        if (dark) {
+            setTheme(R.style.Theme_MySimpleCalculatorDark);
+        } else {
+            setTheme(R.style.Theme_MySimpleCalculator);
+        }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        activity = this; // может пригодитья, но не факт
         initView();
     }
 
@@ -46,10 +50,13 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-        switch(id){
-            case R.id.action_settings :
+        switch (id) {
+            case R.id.action_settings:
                 Intent settingsIntent = new Intent(MainActivity.this, Settings.class);
                 startActivity(settingsIntent);
+                Intent switchThemeIntent = getIntent();
+                finish();
+                startActivity(switchThemeIntent);
                 return true;
             case R.id.action_about:
                 Intent aboutIntent = new Intent(MainActivity.this, About.class);
@@ -84,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
         mNumberButtons.put(9, findViewById(R.id._9));
         mNumberButtons.put(0, findViewById(R.id._0));
 
-        for(Integer num: mNumberButtons.keySet()) {
+        for (Integer num : mNumberButtons.keySet()) {
             Button btn = mNumberButtons.get(num);
             btn.setOnClickListener(v -> {
                 if ("0".equals(display.getText().toString()) || res) {
@@ -111,7 +118,6 @@ public class MainActivity extends AppCompatActivity {
         divide.setOnClickListener(v -> setOperation(CalculatorCore.OPERATIONS.DIVIDE));
         percent.setOnClickListener(v -> setOperation(CalculatorCore.OPERATIONS.PERCENT));
     }
-
 
 
     @Override
@@ -205,7 +211,7 @@ public class MainActivity extends AppCompatActivity {
         // не знаю лучшего способа не выводить 0 если он не значащий.
         // способы с форматированием или с извлечением дробной части в числовых значения сложнее моего.
         String[] val = String.valueOf(res).split("\\."); // Android Studio предлагает
-                                                                // этот вариант вместо просто точки
+        // этот вариант вместо просто точки
         if (val[1].length() == 1 && "0".equals(val[1])) {
             display.setText(val[0]);
         } else {

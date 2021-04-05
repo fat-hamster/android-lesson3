@@ -24,6 +24,7 @@
     <string name="settings">Settings</string>
     <string name="about">About</string>
     <string name="switch_theme">Switch to Dark theme</string>
-    <string name="aboutText">Simple calculator by Dmitry Gridchin. Homework for Android Developer course. GeekBrains University</string>
+    <string name="aboutText">Simple calculator by Dmitry Gridchin. Homework for Android Developer
+        course. GeekBrains University. Application icon by Freepik</string>
     <string name="backButton">Back</string>
 </resources>

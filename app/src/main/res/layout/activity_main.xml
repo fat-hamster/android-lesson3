@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/main_layout"
-    android:theme="@style/Theme.MySimpleCalculator"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -20,8 +19,8 @@
             android:layout_marginRight="@dimen/horizontal_margin"
             android:background="@drawable/style_textview"
             android:gravity="right"
-            android:hint="@string/_0"
             android:paddingRight="@dimen/horizontal_margin"
+            android:text="@string/_0"
             android:textSize="@dimen/textviewSize" />
 
 
@@ -170,8 +169,8 @@
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/_0"
-                    android:layout_width="match_parent"
-                    style="@style/ZeroButtons"/>
+                    style="@style/ZeroButtons"
+                    android:layout_width="match_parent" />
             </LinearLayout>
 
             <LinearLayout

@@ -29,7 +29,7 @@ public class CalculatorCore implements Parcelable {
     }
 
     private CalculatorCore(Parcel in) {
-        String[] data = new String[4];
+        String[] data = new String[5];
         in.readStringArray(data);
         if ("null".equals(data[0])) {
             result = null;
@@ -48,6 +48,7 @@ public class CalculatorCore implements Parcelable {
         }
 
         operation = OPERATIONS.valueOf(data[3]);
+        MainActivity.dark = Boolean.valueOf(data[4]); // восстанавливаем значение темы
     }
 
     public void setOperation(OPERATIONS operation) {
@@ -132,12 +133,8 @@ public class CalculatorCore implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        /*dest.writeString(String.valueOf(result));
-        dest.writeString(String.valueOf(operand1));
-        dest.writeString(String.valueOf(operand2));
-        dest.writeString(operation.toString()); */
         dest.writeStringArray(new String[]{String.valueOf(result), String.valueOf(operand1),
-                String.valueOf(operand2), operation.toString()});
+                String.valueOf(operand2), operation.toString(), MainActivity.dark.toString()});
     }
 
     public static final Parcelable.Creator<CalculatorCore> CREATOR = new Parcelable.Creator<CalculatorCore>() {
