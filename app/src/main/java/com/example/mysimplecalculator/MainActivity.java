@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -28,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     private final static String CALC_VALUES = "CalcValues";
     static final String TAG = "MySimpleCalculator";
     protected static Boolean dark = false;
+    protected static Activity mainActivity = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initView();
+        mainActivity = this;
     }
 
     @Override
@@ -54,9 +57,6 @@ public class MainActivity extends AppCompatActivity {
             case R.id.action_settings:
                 Intent settingsIntent = new Intent(MainActivity.this, Settings.class);
                 startActivity(settingsIntent);
-                Intent switchThemeIntent = getIntent();
-                finish();
-                startActivity(switchThemeIntent);
                 return true;
             case R.id.action_about:
                 Intent aboutIntent = new Intent(MainActivity.this, About.class);

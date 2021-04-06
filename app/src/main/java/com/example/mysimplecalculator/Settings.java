@@ -47,6 +47,11 @@ public class Settings extends AppCompatActivity {
         switch (item.getItemId()) {
             case android.R.id.home:
                 this.finish();
+                if(MainActivity.mainActivity != null) {
+                    MainActivity.mainActivity.finish();
+                    Intent back = new Intent(MainActivity.mainActivity, MainActivity.class);
+                    startActivity(back);
+                }
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
