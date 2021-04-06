@@ -8,6 +8,7 @@
 
     <com.google.android.material.switchmaterial.SwitchMaterial
         android:id="@+id/switchTheme"
+        style="@style/TextAppearance.MaterialComponents.Body1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"

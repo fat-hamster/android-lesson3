@@ -3,6 +3,7 @@ package com.example.mysimplecalculator;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Build;
@@ -29,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     private final static String CALC_VALUES = "CalcValues";
     static final String TAG = "MySimpleCalculator";
     protected static Boolean dark = false;
+    @SuppressLint("StaticFieldLeak")
     protected static Activity mainActivity = null;
 
     @Override

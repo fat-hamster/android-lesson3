@@ -47,7 +47,7 @@ public class Settings extends AppCompatActivity {
         switch (item.getItemId()) {
             case android.R.id.home:
                 this.finish();
-                if(MainActivity.mainActivity != null) {
+                if(MainActivity.mainActivity != null) { // костыль, но по другому у меня не получалось
                     MainActivity.mainActivity.finish();
                     Intent back = new Intent(MainActivity.mainActivity, MainActivity.class);
                     startActivity(back);
